@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white z-2">
       <GiNoodles className=" text-7xl font-bold text-[#fee379]" />
-      <h1 className="w-full text-3xl font-bold text-[#B00B13]">SOUP!</h1>
+      <h1 className="w-full text-4xl font-bold text-[#B00B13]">SOUP!</h1>
       <ul className="hidden md:flex">
         {values.map((value, index) => {
           return <Link to={value.link} className="p-4">{value.title}</Link>;
@@ -35,9 +35,9 @@ const Navbar = () => {
             : "ease-in-out duration-500 fixed left-[-100%] "
         }
       >
-        <h1 className="w-full text-3xl font-bold text-[#B00B13] m-4">SOUP!</h1>
+        <h1 className="w-full text-4xl font-bold text-[#B00B13] m-4 flex"><GiNoodles className=" text-5xl font-bold text-[#fee379]" /> SOUP!</h1>
         {values.map((value, index) => {
-          return <Link to={value.link} className="px-6 border-b border-gray-600 py-7">{value.title}</Link>;
+          return <Link to={value.link} className="px-6 text-3xl border-b border-gray-600 py-7">{value.title}</Link>;
         })}
       </ul>
     </div>
