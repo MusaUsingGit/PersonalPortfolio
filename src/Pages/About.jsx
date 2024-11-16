@@ -16,7 +16,7 @@ const About = () => {
 
         <div className="snap-center h-screen w-full flex items-center justify-center bg-gradient-to-bl from-[#b00b1E] to-[#b000b5] text-transparent bg-clip-text">
           <h1 className="text-7xl font-extrabold max-w-[800px] mx-auto text-center">
-            I am <strong className="hover:animate-text-color-change">Autistic</strong>
+            I am a <strong className="animate-text-color-change">Student</strong>
           </h1>
         </div>
       </div>

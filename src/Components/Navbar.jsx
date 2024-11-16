@@ -22,22 +22,22 @@ const Navbar = () => {
       <h1 className="w-full text-4xl font-bold text-[#B00B13]">SOUP!</h1>
       <ul className="hidden md:flex">
         {values.map((value, index) => {
-          return <Link to={value.link} className="p-4">{value.title}</Link>;
+          return <Link to={value.link} className="p-5">{value.title}</Link>;
         })}
       </ul>
       <div onClick={handleNav} className="block md:hidden">
-        {nav ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+        {nav ? <AiOutlineClose size={40} /> : <AiOutlineMenu size={40} />}
       </div>
       <ul
         className={
           nav
-            ? "z-10 fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500 flex flex-col"
-            : "ease-in-out duration-500 fixed left-[-100%] "
+            ? "z-10 fixed left-0 top-0 w-[70%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500 flex flex-col"
+            : "ease-in-out duration-500 fixed -left-full "
         }
       >
         <h1 className="w-full text-4xl font-bold text-[#B00B13] m-4 flex"><GiNoodles className=" text-5xl font-bold text-[#fee379]" /> SOUP!</h1>
         {values.map((value, index) => {
-          return <Link to={value.link} className="px-6 text-3xl border-b border-gray-600 py-7">{value.title}</Link>;
+          return <Link to={value.link} className="px-3 text-3xl border-b border-gray-600 py-7">{value.title}</Link>;
         })}
       </ul>
     </div>

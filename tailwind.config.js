@@ -8,10 +8,12 @@ module.exports = {
       },
       keyframes: {
         textColorChange: {
-          "0%": { color: "#b00b1E" }, // Starting color
-          "33%": { color: "#b000b5" }, // Midway color
-          "66%": { color: "#FF6347" }, // Another color (e.g., tomato)
-          "100%": { color: "#b00b1E" }, // Return to starting color
+          "0%": { color: "#b00b1E" },
+          "17%": { color: "#bada55" },
+          "33%": { color: "#b000b5" },
+          "50%": { color: "#b060b5" },
+          "66%": { color: "#FF6347" },
+          "100%": { color: "#b00b1E" },
         },
       },
     },

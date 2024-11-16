@@ -19,7 +19,6 @@ useEffect(() => {
   if (typed) {
   typed.options.preStringTyped = (index) => {
   setTextColor(colors[index])
-  typed.options.backDelay = Math.random() * 5000;
 }
 }
 }, [typed])
@@ -27,8 +26,7 @@ useEffect(() => {
   return (
     <div className="max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center">
       <div>
-      <ReactTyped className={`${textColor} z-0 text-7xl font-bold`} typedRef = {setTyped} strings = {strings} typeSpeed={100} backSpeed={200} loop />
-      
+      <ReactTyped className={`${textColor} z-0 text-7xl font-bold`} typedRef = {setTyped} strings = {strings} typeSpeed={50} backDelay={1000} backSpeed={35} loop />
       </div>
     </div>
   );
