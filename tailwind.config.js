@@ -9,7 +9,7 @@ module.exports = {
       },
       keyframes: {
         textColorChange: {
-          "0%": { color: "#b00b1E" },
+          "0%": { color: "#b00b1e" },
           "17%": { color: "#bada55" },
           "33%": { color: "#b000b5" },
           "50%": { color: "#ab00b5" },

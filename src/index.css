@@ -17,6 +17,7 @@ body{
     background-color: #020114;
     overflow-x :hidden;
 }
+
 .gradient-text{
   background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));
   --tw-gradient-from: #B000B5 var(--tw-gradient-from-position);
