@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white z-2">
       <GiNoodles className=" text-7xl font-bold text-[#fee379]" />
-      <h1 className="w-full text-4xl font-bold text-[#B00B13]">SOUP!</h1>
+      <h1 className="w-full text-4xl font-bold gradient-text">SOUP!</h1>
       <ul className="hidden md:flex">
         {values.map((value, index) => {
           return <Link to={value.link} className="p-5">{value.title}</Link>;

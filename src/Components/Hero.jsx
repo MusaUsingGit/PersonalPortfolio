@@ -8,7 +8,7 @@ const strings = ["Making Progress", "Every","Single","Day :)"];
 export const Hero = () => {
 
 const [typed, setTyped] = useState()
-const colors = ["text-[#bada55]", "text-[#b000b5]", "text-[#b00b1E]", "font-extrabold animate-text-color-change"]
+const colors = ["text-[#bada55]", "text-[#b000b5]", "gradient-text", "font-extrabold animate-text-color-change"]
 
 
 
@@ -26,7 +26,7 @@ useEffect(() => {
   return (
     <div className="max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center">
       <div>
-      <ReactTyped className={`${textColor} z-0 text-7xl font-bold`} typedRef = {setTyped} strings = {strings} typeSpeed={50} backDelay={1000} backSpeed={35} loop />
+      <ReactTyped className={`${textColor} z-0 text-7xl font-bold hover:animate-text-color-change`} typedRef = {setTyped} strings = {strings} typeSpeed={50} backDelay={1000} backSpeed={35} loop />
       </div>
     </div>
   );

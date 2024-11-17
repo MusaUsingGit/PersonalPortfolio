@@ -3,17 +3,27 @@
 @tailwind utilities;
 
 @layer utilities {
-  /* Chrome, Safari and Opera */
+
   .scrollbar-hidden::-webkit-scrollbar {
     display: none;
   }
 
-  
-}
-body{
-    background-color: black;
-    overflow-x :hidden;
+  .scrollbar-hidden {
     scrollbar-width: none; 
     -ms-overflow-style: none; 
+  }
+}
+body{
+    background-color: #020114;
+    overflow-x :hidden;
+}
+.gradient-text{
+  background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));
+  --tw-gradient-from: #B000B5 var(--tw-gradient-from-position);
+    --tw-gradient-to: rgb(113 102 238 / 0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    --tw-gradient-to: #7166EE var(--tw-gradient-to-position);
+   color: transparent;
+   background-clip: text;
 }
 
