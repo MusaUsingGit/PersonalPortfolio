@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        "text-color-change": "textColorChange 2s infinite linear",
+        "text-color-change": "textColorChange 3s infinite linear",
         "image-hue-shift": "hueShift 7s infinite linear",
       },
       keyframes: {
