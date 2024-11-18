@@ -8,7 +8,7 @@ const About = () => {
   return (
     <div className="h-screen overflow-hidden scrollbar-hidden">
       <Navbar className="sticky top-0 z-10" />
-      <div className="h-screen overflow-y-auto scroll-snap-y snap-mandatory justify-center items-center">
+      <div className="h-screen overflow-y-auto snap-y snap-mandatory justify-center items-center">
         <div className="snap-center h-screen w-full flex items-center justify-center gradient-text">
           <h1 className="text-7xl font-extrabold max-w-[800px] mx-auto text-center animate-text-color-change">
             Who am I?
