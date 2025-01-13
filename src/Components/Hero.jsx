@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ReactTyped } from "react-typed";
+import Footer from "./Footer";
+import { Link } from "react-router-dom";
 
 const strings = ["Making Progress", "Every", "Single", "Day :)"];
 
@@ -24,10 +26,10 @@ export const Hero = () => {
   }, [typed]);
 
   return (
-    <div className="max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center">
-      <div>
+    <div >
+      <div className="max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center">
         <ReactTyped
-          className={`${textColor} z-0 text-7xl font-bold hover:animate-text-color-change`}
+          className={`${textColor} z-0 text-7xl font-bold p-3`}
           typedRef={setTyped}
           strings={strings}
           typeSpeed={50}
@@ -36,6 +38,12 @@ export const Hero = () => {
           loop
         />
       </div>
+      <div className="max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center ">
+          <h1 className="sm:text-6xl  text-4xl gradient-text mb-5 p-5">Hi I'm Musa and welcome to my portfolio page!</h1>
+          <Link className="sm:text-3xl text-xl text-gray-500 hover:text-white  " to={'/about'}>Click here to learn more about me!</Link>
+      </div>
+      <Footer />
     </div>
+    
   );
 };

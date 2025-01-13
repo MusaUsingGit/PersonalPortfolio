@@ -18,10 +18,7 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white z-2">
-      <GiNoodles className="text-7xl font-bold text-[#fee379] hover:animate-text-color-change" style={{
-    "--animation-duration": "5s", 
-    "--start-color": "#FFFFFF", 
-  }}/>
+      <GiNoodles className="text-7xl font-bold text-[#fee379] hover:animate-text-color-change"/>
       <h1 className="w-full text-4xl font-bold gradient-text">SOUP!</h1>
       <ul className="hidden md:flex">
         {values.map((value, index) => {

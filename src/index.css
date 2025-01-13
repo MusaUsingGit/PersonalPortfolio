@@ -28,3 +28,11 @@ body{
    background-clip: text;
 }
 
+@layer utilities {
+  .glow {
+    animation-duration: 3000ms;
+    box-shadow: 0 0 50px 20px rgba(80, 130, 246, 0.5);
+  }
+}
+
+
