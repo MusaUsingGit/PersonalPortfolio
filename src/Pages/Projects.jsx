@@ -2,6 +2,9 @@ import React from "react";
 import Navbar from "../Components/Navbar";
 import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+
 const Projects = () => {
   return (
     <div className="h-screen overflow-hidden scrollbar-hidden">
@@ -20,10 +23,9 @@ const Projects = () => {
             </h1>
             <div id='PHOTOSHOPPROJECTCONTAINER'></div>
           </div>
-          
-          
           <Footer />
       </div>
+      
     </div>
   );
 };
