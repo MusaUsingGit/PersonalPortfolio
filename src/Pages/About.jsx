@@ -66,7 +66,7 @@ const About = () => {
             <img src={code} alt="code" className="rounded-2xl  ring-blue-950" />
           </Link>
         </div>
-        <div data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="500" data-aos-easing="linear" className="w-full h-full items-center justify-center gradient-text flex flex-col">
+        <div data-aos="fade-up" data-aos-anchor-placement="center-center" data-aos-duration="500" data-aos-easing="linear" className="w-full h-full items-center justify-center gradient-text flex flex-col">
           <h1 className="text-6xl font-extrabold max-w-[800px] mx-auto text-center">
             I Edit Images
           </h1>
