@@ -1,23 +1,44 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Navbar from "../Components/Navbar";
 import me from "../Assets/Me But red.png";
 import art from "../Assets/lake.png";
 import code from "../Assets/ballcatch.gif";
-import { Link } from "react-router-dom";
+import { Link, useLocation} from "react-router-dom";
 import Footer from "../Components/Footer";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+
 
 const About = () => {
+  const location = useLocation();
+   // Initialize AOS on route change
+   useEffect(() => {
+    AOS.init({
+      delay: 50,
+      duration: 1000,
+      easing: "linear",
+      once: false, 
+    });
+    AOS.refresh(); 
+
+
+    return () => {
+      AOS.refresh(); 
+    };
+  }, [location]); 
+
+  
   return (
-    <div className="h-screen overflow-hidden scrollbar-hidden">
+    <div className="h-screen overflow: visible scrollbar-hidden">
       <Navbar className="sticky top-0 z-10" />
-      <div className="h-screen overflow-y-auto snap-y snap-proximity justify-center items-center">
+      <div className="h-screen overflow-y-visible snap-y snap-proximity justify-center items-center">
         <div className="snap-center h-screen w-full flex items-center justify-center gradient-text">
           <h1 className="text-7xl font-extrabold max-w-[800px] mx-auto text-center gradient-text">
             Who am I?
           </h1>
         </div>
-
-        <div className="snap-center w-full flex items-center justify-center gradient-text flex-col">
+      
+        <div data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="500" data-aos-easing="linear" className="snap-center w-full flex items-center justify-center gradient-text flex-col ">
           <h1 className="text-6xl font-extrabold max-w-[800px] mx-auto text-center">
             I am a <strong>Student</strong>
           </h1>
@@ -28,12 +49,12 @@ const About = () => {
           </div>
           <img
             src={me}
-            className="w-[50%] rounded-full sm:w-[30%] md:w-[20%] flex-shrink h-auto mt-4 hover:glow transition-glow ease-in duration-500 hover:animate-image-hue-shift"
+            className="w-[50%] rounded-full sm:w-[30%] md:w-[20%] flex-shrink h-auto mt-4 shadow-sm hover:glow transition-glow ease-in duration-500 hover:animate-image-hue-shift"
             alt="icon"
           />
         </div>
         <br />
-        <div className="snap-center w-full h-full items-center justify-center gradient-text flex flex-col">
+        <div data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="500" data-aos-easing="linear" className="snap-center w-full h-full items-center justify-center gradient-text flex flex-col">
           <h1 className="text-6xl font-extrabold max-w-[800px] mx-auto text-center">
             I Write Code
           </h1>
@@ -45,7 +66,7 @@ const About = () => {
             <img src={code} alt="code" className="rounded-2xl  ring-blue-950" />
           </Link>
         </div>
-        <div className="w-full h-full items-center justify-center gradient-text flex flex-col">
+        <div data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="500" data-aos-easing="linear" className="w-full h-full items-center justify-center gradient-text flex flex-col">
           <h1 className="text-6xl font-extrabold max-w-[800px] mx-auto text-center">
             I Edit Images
           </h1>

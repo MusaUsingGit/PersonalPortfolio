@@ -30,9 +30,10 @@ body{
 
 @layer utilities {
   .glow {
-    animation-duration: 3000ms;
-    box-shadow: 0 0 50px 20px rgba(80, 130, 246, 0.5);
+    box-shadow: 0 0 50px 20px rgba(51, 107, 227, 0.75);
   }
 }
-
+[data-aos] {
+  min-height: 100px;
+}
 
