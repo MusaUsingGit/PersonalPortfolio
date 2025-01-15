@@ -44,7 +44,7 @@ const Background = () => {
     if(visualViewport.width < 1000){
         starCount = 100;
     }else{
-        starCount = 500;
+        starCount = 300;
     }
 
     for (let i = 0; i < starCount; i++) {
@@ -96,7 +96,7 @@ const Background = () => {
                 const angle = Math.atan2(star.y - mouseY, star.x - mouseX); 
                 star.x +=  Math.cos(angle) * 20 * 5; 
                 star.y += Math.sin(angle) * 20 * 5;
-                star.speed += 4;
+                star.speed += Math.random() * 3;
             }
         });
     })
