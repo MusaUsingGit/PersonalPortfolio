@@ -59,6 +59,8 @@ const Background = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     });
+
+    
     window.addEventListener('mousemove', (event) =>{
         
         const mouseX = event.clientX;
@@ -71,6 +73,21 @@ const Background = () => {
                 const angle = Math.atan2(star.y - mouseY, star.x - mouseX); 
                 star.x +=  Math.cos(angle) * 5 * 5; 
                 star.y += Math.sin(angle) * 5 * 5;
+            }
+        });
+    })
+    window.addEventListener('mousedown', (event) =>{
+        
+        const mouseX = event.clientX;
+        const mouseY = event.clientY;
+
+        stars.forEach(star => {
+            const distance = Math.sqrt(Math.pow(mouseX -star.x,2) +   Math.pow(mouseY- star.y,2));
+    
+            if (distance < 150) {
+                const angle = Math.atan2(star.y - mouseY, star.x - mouseX); 
+                star.x +=  Math.cos(angle) * 20 * 5; 
+                star.y += Math.sin(angle) * 20 * 5;
             }
         });
     })
