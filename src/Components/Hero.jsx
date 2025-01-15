@@ -30,7 +30,18 @@ export const Hero = () => {
       window.scrollTo(0, 0)
   }
   return (
-    <div >
+    <div  id="stars" >
+      <div>
+      <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+
+    <div class="star2"></div>
+    <div class="star2"></div>
+  
+    <div class="star3"></div>
+    <div class="star3"></div>
+      </div>
       <div className="max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center">
         <ReactTyped
           className={`${textColor} z-0 text-7xl font-bold p-3`}

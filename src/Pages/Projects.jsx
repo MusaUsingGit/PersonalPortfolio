@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 import Footer from "../Components/Footer";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
+import Background from "../Components/Background";
 
 const Projects = () => {
   return (
     <div className="h-screen overflow-hidden scrollbar-hidden">
+      <Background />
       <Navbar className="sticky top-0 z-10" />
       <div className="h-screen overflow-y-auto snap-y snap-proximity justify-center items-center">
         <div className="snap-center h-screen w-full flex items-center justify-center gradient-text">

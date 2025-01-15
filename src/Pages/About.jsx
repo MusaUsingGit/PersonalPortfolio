@@ -9,6 +9,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { IoLogoJavascript } from "react-icons/io";
 import { FaPython, FaJava, FaHtml5, FaCss3Alt } from "react-icons/fa";
+import Background from "../Components/Background";
 const About = () => {
   const location = useLocation();
   // Initialize AOS on route change
@@ -28,6 +29,7 @@ const About = () => {
 
   return (
     <div className="h-screen overflow: visible scrollbar-hidden">
+      <Background />
       <Navbar className="sticky top-0 z-10" />
       <div className="h-screen overflow-y-visible snap-y snap-proximity justify-center items-center">
         <div className="snap-center h-screen w-full flex items-center justify-center gradient-text">
