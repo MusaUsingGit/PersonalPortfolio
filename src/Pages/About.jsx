@@ -45,7 +45,7 @@ const About = () => {
           data-aos-easing="linear"
           className="snap-center w-full flex items-center justify-start gradient-text flex-col "
         >
-          <h1 className="text-6xl font-extrabold max-w-[800px] mx-auto text-center ">
+          <h1 className="text-5xl font-extrabold max-w-[800px] mx-auto text-center md:text-6xl">
             I am a <strong>Student</strong>
           </h1>
           <div className="snap-center h-full w-full flex items-center justify-normal gradient-text pb-">
@@ -55,7 +55,7 @@ const About = () => {
           </div>
           <img
             src={me}
-            className="w-[50%] rounded-full sm:w-[30%] md:w-[20%] flex-shrink h-auto mt-4 shadow-sm hover:glow transition-glow ease-in duration-500 hover:animate-image-hue-shift"
+            className="w-[70%] rounded-full sm:w-[50%] md:w-[20%] flex-shrink h-auto mt-4 shadow-sm hover:glow transition-glow ease-in duration-500 hover:animate-image-hue-shift"
             alt="icon"
           />
         </div>

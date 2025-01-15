@@ -44,13 +44,14 @@ export const Hero = () => {
       </div>
       <div className="max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center">
         <ReactTyped
-          className={`${textColor} z-0 text-7xl font-bold p-3`}
+          className={`${textColor} z-0 text-7xl font-bold p-3 select-none`}
           typedRef={setTyped}
           strings={strings}
           typeSpeed={50}
           backDelay={1000}
           backSpeed={35}
           loop
+
         />
       </div>
       <div  className="max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center snap-center">

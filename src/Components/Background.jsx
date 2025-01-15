@@ -7,11 +7,11 @@ const Background = () => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     
-    // Set the canvas to fill the entire window
+    
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    // Create an array to hold the stars
+    
     const stars = [];
 
     class Star {
@@ -26,7 +26,7 @@ const Background = () => {
       draw() {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+        ctx.fillStyle = `rgba(175, 0, 181, ${this.opacity})`;
         ctx.fill();
       }
 
@@ -39,7 +39,14 @@ const Background = () => {
       }
     }
 
-    for (let i = 0; i < 300; i++) {
+    var starCount = 0;
+    if(visualViewport.width < 1000){
+        starCount = 100;
+    }else{
+        starCount = 300;
+    }
+
+    for (let i = 0; i < starCount; i++) {
       stars.push(new Star());
     }
 
@@ -98,7 +105,7 @@ const Background = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef}></canvas>;
+  return <canvas className="animate-image-hue-shift-long"ref={canvasRef}></canvas>;
 };
 
 export default Background;

@@ -6,6 +6,7 @@ module.exports = {
       animation: {
         "text-color-change": "textColorChange 3s infinite linear",
         "image-hue-shift": "hueShift 7s infinite linear",
+        "image-hue-shift-long": "hueShift 35s infinite linear",
       },
       keyframes: {
         textColorChange: {
