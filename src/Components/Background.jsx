@@ -18,9 +18,9 @@ const Background = () => {
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 5 + 0.1;
+        this.size = Math.random() * 15 + 1;
         this.speed = Math.random() * 0.5 + 0.03;
-        this.opacity = Math.random();
+        this.opacity = Math.random() +0.1;
       }
 
       draw() {
@@ -43,7 +43,7 @@ const Background = () => {
     if(visualViewport.width < 1000){
         starCount = 100;
     }else{
-        starCount = 300;
+        starCount = 500;
     }
 
     for (let i = 0; i < starCount; i++) {
@@ -78,12 +78,12 @@ const Background = () => {
     
             if (distance < 50) {
                 const angle = Math.atan2(star.y - mouseY, star.x - mouseX); 
-                star.x +=  Math.cos(angle) * 5 * 5; 
-                star.y += Math.sin(angle) * 5 * 5;
+                star.x +=  Math.cos(angle) * 1 * 2; 
+                star.y += Math.sin(angle) * 1 * 2;
             }
         });
     })
-    window.addEventListener('mousedown', (event) =>{
+    window.addEventListener('mouseup', (event) =>{
         
         const mouseX = event.clientX;
         const mouseY = event.clientY;
@@ -99,7 +99,21 @@ const Background = () => {
         });
     })
 
-    // Cleanup the event listener when the component is unmounted
+    window.addEventListener("keydown", (event) => {if (event.repeat) return;
+        if(event.key=='f'){
+            stars.forEach(star => {
+                star.speed += 3
+            });
+        }});
+        window.addEventListener("keyup", (event) => {
+            if(event.key=='f'){
+                stars.forEach(star => {
+                    star.speed -= 3
+                });
+            }});
+
+
+
     return () => {
       window.removeEventListener('resize', () => {});
     };

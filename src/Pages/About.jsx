@@ -33,7 +33,7 @@ const About = () => {
       <Navbar className="sticky top-0 z-10" />
       <div className="h-screen overflow-y-visible snap-y snap-proximity justify-center items-center">
         <div className="snap-center h-screen w-full flex items-center justify-center gradient-text">
-          <h1 className="text-7xl font-extrabold max-w-[800px] mx-auto text-center gradient-text">
+          <h1 className="text-7xl font-extrabold max-w-[800px] mx-auto text-center gradient-text select-none">
             Who am I?
           </h1>
         </div>
@@ -43,13 +43,13 @@ const About = () => {
           data-aos-anchor-placement="top-center"
           data-aos-duration="500"
           data-aos-easing="linear"
-          className="snap-center w-full flex items-center justify-start gradient-text flex-col "
+          className="snap-center w-full flex items-center justify-start gradient-text flex-col select-none "
         >
-          <h1 className="text-5xl font-extrabold max-w-[800px] mx-auto text-center md:text-6xl">
+          <h1 className="text-5xl font-extrabold max-w-[800px] mx-auto text-center md:text-6xl ">
             I am a <strong>Student</strong>
           </h1>
           <div className="snap-center h-full w-full flex items-center justify-normal gradient-text pb-">
-            <h1 className="text-3xl font-extrabold max-w-[800px] mx-auto text-center">
+            <h1 className="text-3xl font-extrabold max-w-[800px] mx-auto text-center select-none">
               Currently studying Computer Science BSc
             </h1>
           </div>
@@ -65,9 +65,9 @@ const About = () => {
           data-aos-anchor-placement="top-center"
           data-aos-duration="500"
           data-aos-easing="linear"
-          className="snap-center w-full h-full items-center justify-center gradient-text flex flex-col"
+          className="snap-center w-full h-full items-center justify-center gradient-text flex flex-col select-none"
         >
-          <h1 className="text-6xl font-extrabold max-w-[800px] mx-auto text-center">
+          <h1 className="text-6xl font-extrabold max-w-[800px] mx-auto text-center ">
             I Write Code
           </h1>
 
@@ -84,9 +84,9 @@ const About = () => {
           data-aos-anchor-placement="top-center"
           data-aos-duration="500"
           data-aos-easing="linear"
-          className="w-full h-full items-center justify-start gradient-text flex flex-col max-w-[800px] mx-auto"
+          className="w-full h-full items-center justify-start gradient-text flex flex-col max-w-[800px] mx-auto select-none"
         >
-          <h1 className="text-6xl font-extrabold max-w-[800px] mx-auto text-center mb-5">
+          <h1 className="text-6xl font-extrabold max-w-[800px] mx-auto text-center mb-5 ">
             Programming Languages:
           </h1>
           <div className="flex flex-wrap flex-shrink mx-auto">
@@ -123,9 +123,9 @@ const About = () => {
           data-aos-anchor-placement="top-center"
           data-aos-duration="500"
           data-aos-easing="linear"
-          className="w-full h-full items-center justify-start gradient-text flex flex-col"
+          className="w-full h-full items-center justify-start gradient-text flex flex-col select-none"
         >
-          <h1 className="text-6xl font-extrabold max-w-[800px] mx-auto text-center">
+          <h1 className="text-6xl font-extrabold max-w-[800px] mx-auto text-center ">
             I Edit Images
           </h1>
 
