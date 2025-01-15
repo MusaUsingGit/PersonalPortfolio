@@ -35,6 +35,7 @@ const Background = () => {
         if (this.y > canvas.height) {
           this.y = 0;
           this.x = Math.random() * canvas.width;
+          this.speed =Math.random() +0.1;
         }
       }
     }
@@ -76,10 +77,10 @@ const Background = () => {
         stars.forEach(star => {
             const distance = Math.sqrt(Math.pow(mouseX -star.x,2) +   Math.pow(mouseY- star.y,2));
     
-            if (distance < 50) {
+            if (distance < 100) {
                 const angle = Math.atan2(star.y - mouseY, star.x - mouseX); 
-                star.x +=  Math.cos(angle) * 1 * 2; 
-                star.y += Math.sin(angle) * 1 * 2;
+                star.x +=  Math.cos(angle) * 5 * 2; 
+                star.y += Math.sin(angle) * 5 * 2;
             }
         });
     })
@@ -95,6 +96,7 @@ const Background = () => {
                 const angle = Math.atan2(star.y - mouseY, star.x - mouseX); 
                 star.x +=  Math.cos(angle) * 20 * 5; 
                 star.y += Math.sin(angle) * 20 * 5;
+                star.speed += 4;
             }
         });
     })
