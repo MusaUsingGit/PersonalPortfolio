@@ -71,7 +71,7 @@ const About = () => {
             I Write Code
           </h1>
 
-          <Link
+          <Link 
             to={"/projects"}
             className="w-[50%] sm:w-[30%] md:w-[20%] flex-shrink mt-4  hover:glow transition-glow ease-in duration-500 hover:animate-pulse rounded-2xl"
           >
@@ -80,38 +80,56 @@ const About = () => {
         </div>
 
         <div
-          data-aos="fade-up"
+          className="w-full h-full items-center justify-start gradient-text flex flex-col max-w-[800px] mx-auto select-none"
+        >
+          <h1 data-aos="fade-up"
           data-aos-anchor-placement="top-center"
           data-aos-duration="500"
           data-aos-easing="linear"
-          className="w-full h-full items-center justify-start gradient-text flex flex-col max-w-[800px] mx-auto select-none"
-        >
-          <h1 className="text-6xl font-extrabold max-w-[800px] mx-auto text-center mb-5 ">
+          className="text-6xl font-extrabold max-w-[800px] mx-auto text-center mb-5  ">
             Programming Languages:
           </h1>
-          <div className="flex flex-wrap flex-shrink mx-auto">
+
+          <div data-aos="fade-up"
+          data-aos-anchor-placement="top-center"
+          data-aos-duration="500"
+          data-aos-easing="linear"
+          className="flex flex-wrap flex-shrink mx-auto">
             <div className="gradient-text  md:text-3xl leading-7 m-5 flex flex-nowrap">
-              <IoLogoJavascript className="text-7xl mr-5 text-purple-700" />
+              <IoLogoJavascript className="text-7xl mr-5 text-purple-700 animate-image-hue-shift-long" />
               <p className="text-4xl my-auto">JavaScript</p>
             </div>
 
-            <div className="gradient-text  md:text-3xl leading-7 m-5 flex flex-nowrap">
-              <FaPython className="text-7xl mr-5 text-purple-700" />
+            <div data-aos="fade-up"
+          data-aos-anchor-placement="top-center"
+          data-aos-duration="500"
+          data-aos-easing="linear"
+             className="gradient-text  md:text-3xl leading-7 m-5 flex flex-nowrap">
+              <FaPython className="text-7xl mr-5 text-purple-700 animate-image-half-hue-shift" />
               <p className="text-4xl my-auto">Python</p>
             </div>
 
-            <div className="gradient-text  md:text-3xl leading-7 m-5 flex flex-nowrap">
-              <FaJava className="text-7xl mr-5 text-purple-700" />
+            <div data-aos="fade-up"
+          data-aos-anchor-placement="top-center"
+          data-aos-duration="500"
+          data-aos-easing="linear" className="gradient-text  md:text-3xl leading-7 m-5 flex flex-nowrap">
+              <FaJava className="text-7xl mr-5 text-purple-700 animate-image-half-hue-shift"  />
               <p className="text-4xl my-auto">Java</p>
             </div>
 
-            <div className="gradient-text  md:text-3xl leading-7 m-5 flex flex-nowrap">
-              <FaHtml5 className="text-7xl mr-5 text-purple-700" />
+            <div data-aos="fade-up"
+          data-aos-anchor-placement="top-center"
+          data-aos-duration="500"
+          data-aos-easing="linear" className="gradient-text  md:text-3xl leading-7 m-5 flex flex-nowrap">
+              <FaHtml5 className="text-7xl mr-5 text-purple-700 animate-image-half-hue-shift"  />
               <p className="text-4xl my-auto">HTML</p>
             </div>
 
-            <div className="gradient-text  md:text-3xl leading-7 m-5 flex flex-nowrap">
-              <FaCss3Alt className="text-7xl mr-5 text-purple-700"/>
+            <div  data-aos="fade-up"
+          data-aos-anchor-placement="top-center"
+          data-aos-duration="500"
+          data-aos-easing="linear" className="gradient-text  md:text-3xl leading-7 m-5 flex flex-nowrap ">
+              <FaCss3Alt className="text-7xl mr-5 text-purple-700 animate-image-half-hue-shift" />
               <p className="text-4xl my-auto">CSS</p>
             </div>
 
@@ -129,7 +147,7 @@ const About = () => {
             I Edit Images
           </h1>
 
-          <Link
+          <Link 
             to={"/projects"}
             className="w-[50%] sm:w-[30%] md:w-[20%] flex-shrink mt-4  lg:glow-none hover:glow transition-glow ease-in duration-500 hover:animate-pulse rounded-2xl"
           >

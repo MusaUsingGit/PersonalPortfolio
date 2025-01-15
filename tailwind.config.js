@@ -7,6 +7,7 @@ module.exports = {
         "text-color-change": "textColorChange 3s infinite linear",
         "image-hue-shift": "hueShift 7s infinite linear",
         "image-hue-shift-long": "hueShift 35s infinite linear",
+
       },
       keyframes: {
         textColorChange: {
@@ -21,6 +22,8 @@ module.exports = {
           "0%": { filter: "hue-rotate(0deg)" }, 
           "100%": { filter: "hue-rotate(360deg)" }, 
         },
+       
+        
       },
     },
   },

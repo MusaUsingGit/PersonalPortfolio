@@ -9,7 +9,7 @@ import App from "./App";
 import Contact from "./Pages/Contact";
 import About from "./Pages/About";
 import Projects from "./Pages/Projects";
-
+import SecretPage from "./Pages/SecretPage";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +24,9 @@ const router = createBrowserRouter([
   },{
     path: "/projects",
     element: <Projects />
+  },{
+    path:"/secretPage",
+    element:<SecretPage />
   }
 ]);
 

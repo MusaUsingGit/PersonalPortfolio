@@ -17,12 +17,12 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white z-2">
-      <GiNoodles className="text-7xl font-bold text-[#fee379] hover:animate-text-color-change"/>
+    <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white z-2 select-none">
+      <Link to={"/SecretPage"}><GiNoodles className="text-5xl font-bold text-[#fee379] hover:animate-text-color-change"/></Link>
       <h1 className="w-full text-4xl font-bold gradient-text">SOUP!</h1>
       <ul className="hidden md:flex">
         {values.map((value, index) => {
-          return <Link to={value.link} className="p-5">{value.title}</Link>;
+          return <Link to={value.link} className="p-5" viewTransition>{value.title}</Link>;
         })}
       </ul>
       <div onClick={handleNav} className="block md:hidden">
@@ -37,7 +37,7 @@ const Navbar = () => {
 >
         <h1 className="w-full text-4xl font-bold gradient-text m-4 flex"><GiNoodles className=" text-5xl font-bold text-[#fee379] hover:animate-text-color-change" /> SOUP!</h1>
         {values.map((value, index) => {
-          return <Link to={value.link} className="px-3 text-3xl border-b border-gray-600 py-7">{value.title}</Link>;
+          return <Link  to={value.link} className="px-3 text-3xl border-b border-gray-600 py-7" viewTransition>{value.title}</Link>;
         })}
       </ul>
     </div>
