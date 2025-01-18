@@ -105,7 +105,7 @@ const About = () => {
           data-aos-duration="500"
           data-aos-easing="linear"
              className="gradient-text  md:text-3xl leading-7 m-5 flex flex-nowrap">
-              <FaPython className="text-7xl mr-5 text-purple-700 animate-image-half-hue-shift" />
+              <FaPython className="text-7xl mr-5 text-purple-700 animate-image-hue-shift-long" />
               <p className="text-4xl my-auto">Python</p>
             </div>
 
@@ -113,7 +113,7 @@ const About = () => {
           data-aos-anchor-placement="top-center"
           data-aos-duration="500"
           data-aos-easing="linear" className="gradient-text  md:text-3xl leading-7 m-5 flex flex-nowrap">
-              <FaJava className="text-7xl mr-5 text-purple-700 animate-image-half-hue-shift"  />
+              <FaJava className="text-7xl mr-5 text-purple-700 animate-image-hue-shift-long"  />
               <p className="text-4xl my-auto">Java</p>
             </div>
 
@@ -121,7 +121,7 @@ const About = () => {
           data-aos-anchor-placement="top-center"
           data-aos-duration="500"
           data-aos-easing="linear" className="gradient-text  md:text-3xl leading-7 m-5 flex flex-nowrap">
-              <FaHtml5 className="text-7xl mr-5 text-purple-700 animate-image-half-hue-shift"  />
+              <FaHtml5 className="text-7xl mr-5 text-purple-700 animate-image-hue-shift-long"  />
               <p className="text-4xl my-auto">HTML</p>
             </div>
 
@@ -129,7 +129,7 @@ const About = () => {
           data-aos-anchor-placement="top-center"
           data-aos-duration="500"
           data-aos-easing="linear" className="gradient-text  md:text-3xl leading-7 m-5 flex flex-nowrap ">
-              <FaCss3Alt className="text-7xl mr-5 text-purple-700 animate-image-half-hue-shift" />
+              <FaCss3Alt className="text-7xl mr-5 text-purple-700 animate-image-hue-shift-long" />
               <p className="text-4xl my-auto">CSS</p>
             </div>
 
