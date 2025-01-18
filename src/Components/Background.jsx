@@ -6,7 +6,7 @@ const Background = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
-    var starCount = visualViewport.width * 2;
+    var starCount = visualViewport.width * 0.5;
     
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -38,9 +38,8 @@ const Background = () => {
         if (this.y > canvas.height) {
           this.y = 0;
           this.x = Math.random() * canvas.width;
-          this.size = Math.random() * 2 + 1;
           this.speed =Math.random() +0.1;
-          this.starCount = visualViewport.width;
+          this.starCount = visualViewport.width * 0.5;
         }
       }
     }
@@ -79,8 +78,8 @@ const Background = () => {
     
             if (distance < 100) {
                 const angle = Math.atan2(star.y - mouseY, star.x - mouseX); 
-                star.x +=  Math.cos(angle) *  Math.log10(star.size) * 50; 
-                star.y += Math.sin(angle) *  Math.log10(star.size) * 50;
+                star.x +=  Math.cos(angle) * 5 * 2; 
+                star.y += Math.sin(angle) * 5 * 2;
             }
         });
     })
@@ -92,30 +91,21 @@ const Background = () => {
         stars.forEach(star => {
             const distance = Math.sqrt(Math.pow(mouseX -star.x,2) +   Math.pow(mouseY- star.y,2));
     
-            if (distance < 250) {
+            if (distance < 150) {
                 const angle = Math.atan2(star.y - mouseY, star.x - mouseX); 
-                const force = Math.random() * (distance /2 - (-1*distance)) - (distance/5) ;
-                star.x += Math.cos(angle) * force; 
-                star.y += Math.sin(angle) * force ;
-                star.speed += Math.random() + 1
+                star.x +=  Math.cos(angle) * 20 * 5; 
+                star.y += Math.sin(angle) * 20 * 5;
+                star.speed += Math.random() * 2;
             }
         });
     })
 
-    window.addEventListener("keydown", (event) => {
-      if(event.key == 'm'){
-
-      }
-      stars.forEach(star => {
-        const distance = Math.sqrt(Math.pow((visualViewport.width * 0.5) -star.x,2) +   Math.pow((visualViewport.height * 0.5)- star.y,2));
-        const angle = Math.atan2(star.y - (visualViewport.height * 0.5), star.x - (visualViewport.width * 0.5)); 
-        const force = 200 * (Math.random() + 0.9) - distance;
-        star.x += Math.cos(angle) * force; 
-        star.y += Math.sin(angle) * force ;
-        star.speed = 0; 
-    });
-
-    });
+    window.addEventListener("keydown", (event) => {if (event.repeat) return;
+        if(event.key=='f'){
+            stars.forEach(star => {
+                star.speed = 10
+            });
+        }});
         
 
 
