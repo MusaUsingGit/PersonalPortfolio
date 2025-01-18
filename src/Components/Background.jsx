@@ -100,12 +100,39 @@ const Background = () => {
         });
     })
 
-    window.addEventListener("keydown", (event) => {if (event.repeat) return;
-        if(event.key=='f'){
-            stars.forEach(star => {
-                star.speed = 10
-            });
-        }});
+    window.addEventListener("keydown", (event) => {if(event.repeat){return}
+      if(event.key === 'o'){
+      stars.forEach(star => {
+        
+        const distance = Math.sqrt(Math.pow((visualViewport.width * 0.5) -star.x,2) +   Math.pow((visualViewport.height * 0.5)- star.y,2));
+        const angle = Math.atan2(star.y - (visualViewport.height * 0.5), star.x - (visualViewport.width * 0.5)); 
+        const force = 50 - distance;
+          star.x += Math.cos(angle) * force; 
+          star.y += Math.sin(angle) * force;
+        star.speed = 0; 
+    });
+    }
+    });
+
+    window.addEventListener("keyup", (event) => {if(event.repeat){return}
+    if(event.key === 'o'){
+
+    stars.forEach(star => {  
+      const angle = Math.atan2(star.y - (visualViewport.height * 0.5), star.x - (visualViewport.width * 0.5));
+      const finalXDist = Math.random() * visualViewport.height 
+      const finalYDist = Math.random() * visualViewport.height
+      
+      
+        setTimeout(()=>{
+          star.x += Math.cos(angle) * (finalXDist); 
+          star.y += Math.sin(angle) * (finalYDist) ;
+          star.speed = Math.random() + 1
+        },0.2)
+      
+     
+  });
+  }
+});
         
 
 
