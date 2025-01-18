@@ -3,6 +3,7 @@ import Navbar from '../Components/Navbar'
 import Background from '../Components/Background'
 
 const SecretPage = () => {
+
   return (
     <div>
         <Background />
