@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 
-
 const Background = () => {
   const canvasRef = useRef(null); // Create a reference to the canvas element
 
@@ -85,7 +84,7 @@ const Background = () => {
             }
         });
     })
-    window.addEventListener('mouseup', (event) =>{ 
+    window.addEventListener('mouseup', (event) =>{
         
         const mouseX = event.clientX;
         const mouseY = event.clientY;
@@ -103,38 +102,19 @@ const Background = () => {
         });
     })
 
-    window.addEventListener("keydown", (event) => {if(event.repeat){return}
-      if(event.key === 'o'){
+    window.addEventListener("keydown", (event) => {
+      if(event.key == 'm'){
+
+      }
       stars.forEach(star => {
-        
         const distance = Math.sqrt(Math.pow((visualViewport.width * 0.5) -star.x,2) +   Math.pow((visualViewport.height * 0.5)- star.y,2));
         const angle = Math.atan2(star.y - (visualViewport.height * 0.5), star.x - (visualViewport.width * 0.5)); 
-        const force = 50 - distance;
-          star.x += Math.cos(angle) * force; 
-          star.y += Math.sin(angle) * force;
+        const force = 200 * (Math.random() + 0.9) - distance;
+        star.x += Math.cos(angle) * force; 
+        star.y += Math.sin(angle) * force ;
         star.speed = 0; 
     });
-    }
-    });
-    window.addEventListener("keyup", (event) => {if(event.repeat){return}
-      if(event.key === 'o'){
 
-
-      stars.forEach(star => {  
-        const angle = Math.atan2(star.y - (visualViewport.height * 0.5), star.x - (visualViewport.width * 0.5));
-        const finalXDist = Math.random() * visualViewport.height 
-        const finalYDist = Math.random() * visualViewport.height - 100
-        
-        for(var i=0; i<3;i++){
-          setTimeout(()=>{
-            star.x += Math.cos(angle) * (finalXDist/3); 
-            star.y += Math.sin(angle) * (finalYDist/3) ;
-            star.speed += Math.random() + 1
-          },0.2)
-        }
-       
-    });
-    }
     });
         
 
