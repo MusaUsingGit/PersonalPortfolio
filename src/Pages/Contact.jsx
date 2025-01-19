@@ -10,7 +10,7 @@ const Contact = () => {
         CONTACT
 
       </div>
-      <Footer />
+      {/*<Footer /> */}
     </div>
   );
 };
