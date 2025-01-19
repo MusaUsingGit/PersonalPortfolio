@@ -6,7 +6,7 @@ const Background = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
-    var starCount = visualViewport.width * 0.5;
+    var starCount = 500;
 
     let toggle = JSON.parse(localStorage.getItem('force')) || false; 
 
@@ -23,7 +23,7 @@ const Background = () => {
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 1;
+        this.size = Math.random() * 0.001 * Math.max(visualViewport.height,visualViewport.width) + 1;
         this.speed = Math.random() * 2 + 0.03;
         this.opacity = Math.random() +0.1;
         this.startingRed =Math.random() * 255
@@ -80,15 +80,15 @@ const Background = () => {
         toggle = JSON.parse(localStorage.getItem('force')) || false; 
         stars.forEach(star => {
             const distance = Math.sqrt(Math.pow(mouseX -star.x,2) +   Math.pow(mouseY- star.y,2));
-          if(distance < 150){
+          if(distance < Math.min(visualViewport.height,visualViewport.width)/6){
             if (!toggle) {
                 const angle = Math.atan2(star.y - mouseY, star.x - mouseX); 
-                star.x +=  Math.cos(angle) * 5 * 2; 
-                star.y += Math.sin(angle) * 5 * 2;
+                star.x +=  Math.cos(angle) * (0.003 * visualViewport.width) * 2; 
+                star.y += Math.sin(angle) * (0.003 * visualViewport.width) * 2;
             }else{
               const angle = Math.atan2(star.y - mouseY, star.x - mouseX); 
-                star.x -=  Math.cos(angle) * 5 * 2; 
-                star.y -= Math.sin(angle) * 5 * 2;
+                star.x -=  Math.cos(angle) * (0.003 * visualViewport.width) * 2; 
+                star.y -= Math.sin(angle) * (0.003 * visualViewport.width) * 2;
                 star.size +=0.01
                 star.speed +=0.01
             }
@@ -120,7 +120,7 @@ const Background = () => {
   if (event.key === 'h' && !isThrottled) {
     isThrottled = true;
     isKeyPressed = true;
-    const maxDistance = 300;
+    const maxDistance = visualViewport.width;
     const bandWidth = Math.min(visualViewport.height,visualViewport.width)/6; 
     const scatterFactor = 0.5; 
 
@@ -154,7 +154,7 @@ const Background = () => {
 
       star.x = (visualViewport.width * 0.5) + Math.cos(angle + spin) * radius;
       star.y = (visualViewport.height * 0.5) + Math.sin(angle + spin) * radius; 
-      star.size = Math.max(1, 7 - (radius / maxDistance) * 4);
+      star.size =  (Math.min(visualViewport.height,visualViewport.width) * 0.3) / (distance + 5);
       star.speed = 0;
       spin += 1 / distance;
     });
