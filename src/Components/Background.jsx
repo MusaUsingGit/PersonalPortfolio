@@ -24,6 +24,7 @@ const Background = () => {
         this.startingRed =Math.random() * 255
         this.startingGreen =Math.random() * 255
         this.startingBlue =Math.random() * 255
+        
       }
 
       draw() {
@@ -99,27 +100,69 @@ const Background = () => {
             }
         });
     })
+    var spin = 0;
+    let isThrottled = false; 
+    let isKeyPressed = false; 
+    window.addEventListener("keydown", (event) => {
+  if (event.key === 'o' && !isThrottled) {
+    isThrottled = true;
+    isKeyPressed = true;
+    const maxDistance = 300;
+    const bandWidth = Math.min(visualViewport.height,visualViewport.width)/6; 
+    const scatterFactor = 0.5; 
 
-    window.addEventListener("keydown", (event) => {if(event.repeat){return}
-      if(event.key === 'o'){
-      stars.forEach(star => {
-        
-        const distance = Math.sqrt(Math.pow((visualViewport.width * 0.5) -star.x,2) +   Math.pow((visualViewport.height * 0.5)- star.y,2));
-        const angle = Math.atan2(star.y - (visualViewport.height * 0.5), star.x - (visualViewport.width * 0.5)); 
-        const force = 50 - distance;
-          star.x += Math.cos(angle) * force; 
-          star.y += Math.sin(angle) * force;
-        star.speed = 0; 
+    stars.forEach(star => {
+      
+      const distance = Math.sqrt(
+        Math.pow((visualViewport.width * 0.5) - star.x, 2) +
+        Math.pow((visualViewport.height * 0.5) - star.y, 2)
+      );
+      const angle = Math.atan2(
+        star.y - (visualViewport.height * 0.5),
+        star.x - (visualViewport.width * 0.5)
+      );
+
+       
+
+      let radius;
+
+      if (distance < bandWidth) {
+        radius = bandWidth * scatterFactor * Math.random(); // Band 1
+      } else if (distance < bandWidth * 2) {
+        radius = bandWidth + (bandWidth * scatterFactor * Math.random()); // Band 2
+      } else if (distance < bandWidth * 3) {
+        radius = (bandWidth * 2) + (bandWidth * scatterFactor * Math.random()); // Band 3
+      } else if (distance < bandWidth * 4) {
+        radius = (bandWidth * 3) + (bandWidth * scatterFactor * Math.random()); // Band 4
+      } else {
+        radius = (bandWidth * 4) + (bandWidth * scatterFactor * Math.random()); // Band 5
+      }
+
+
+      star.x = (visualViewport.width * 0.5) + Math.cos(angle + spin) * radius;
+      star.y = (visualViewport.height * 0.5) + Math.sin(angle + spin) * radius; 
+      star.size = Math.max(1, 5 - (radius / maxDistance) * 4);
+      star.speed = 0;
+      spin += 1 / distance;
     });
-    }
-    });
 
-    window.addEventListener("keyup", (event) => {if(event.repeat){return}
-    if(event.key === 'o'){
 
-    stars.forEach(star => {  
-      const angle = Math.atan2(star.y - (visualViewport.height * 0.5), star.x - (visualViewport.width * 0.5));
-      const finalXDist = Math.random() * visualViewport.height 
+    
+
+   
+    setTimeout(() => {
+      isThrottled = false;
+    }, 200); 
+  }
+});
+
+    
+     window.addEventListener("keyup", (event) => {if(event.repeat){}
+     if(event.key === 'o'){
+      isKeyPressed = false;
+     stars.forEach(star => {  
+       const angle = Math.atan2(star.y - (visualViewport.height * 0.5), star.x - (visualViewport.width * 0.5));
+       const finalXDist = Math.random() * visualViewport.height 
       const finalYDist = Math.random() * visualViewport.height
       
       
