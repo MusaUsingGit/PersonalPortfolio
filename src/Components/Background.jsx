@@ -152,7 +152,7 @@ const Background = () => {
    
     setTimeout(() => {
       isThrottled = false;
-    }, 200); 
+    }, 20); 
   }
 });
 
