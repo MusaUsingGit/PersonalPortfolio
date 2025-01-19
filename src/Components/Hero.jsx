@@ -58,7 +58,7 @@ export const Hero = () => {
           <h1 data-aos="fade-up"  data-aos-delay="50" data-aos-duration="1000" data-aos-easing="linear" className="sm:text-6xl  text-4xl gradient-text mb-5 p-5">Hi I'm Soup and welcome to my portfolio page!</h1>
           <Link data-aos="fade-up"  data-aos-delay="100"data-aos-duration="1000" data-aos-easing="linear" className="sm:text-3xl text-xl text-gray-500 hover:text-white" onClick={scrolltoTop} to={'/about'}>Click here to learn more about me!</Link>
       </div>
-      <Footer />
+      {/*<Footer /> */}
     </div>
     
   );
