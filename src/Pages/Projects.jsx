@@ -25,7 +25,8 @@ const Projects = () => {
             </h1>
             <div id='PHOTOSHOPPROJECTCONTAINER'></div>
           </div>
-          <Footer />
+          {/*<Footer /> */}
+         
       </div>
       
     </div>
