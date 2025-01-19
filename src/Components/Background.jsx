@@ -2,16 +2,21 @@ import React, { useEffect, useRef } from 'react';
 
 const Background = () => {
   const canvasRef = useRef(null); // Create a reference to the canvas element
-
+  
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     var starCount = visualViewport.width * 0.5;
-    
+
+    let toggle = JSON.parse(localStorage.getItem('force')) || false; 
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
+    var spin = 0;
+    let isThrottled = false; 
     
+     
     const stars = [];
 
     class Star {
@@ -41,6 +46,7 @@ const Background = () => {
           this.x = Math.random() * canvas.width;
           this.speed =Math.random() +0.1;
           this.starCount = visualViewport.width * 0.5;
+          this.size = Math.random() * 3
         }
       }
     }
@@ -61,27 +67,32 @@ const Background = () => {
     };
 
     animate();
-
     // Resize canvas when window size changes
     window.addEventListener('resize', () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     });
 
-    
+
     window.addEventListener('mousemove', (event) =>{
-        
         const mouseX = event.clientX;
         const mouseY = event.clientY;
-
+        toggle = JSON.parse(localStorage.getItem('force')) || false; 
         stars.forEach(star => {
             const distance = Math.sqrt(Math.pow(mouseX -star.x,2) +   Math.pow(mouseY- star.y,2));
-    
-            if (distance < 100) {
+          if(distance < 150){
+            if (!toggle) {
                 const angle = Math.atan2(star.y - mouseY, star.x - mouseX); 
                 star.x +=  Math.cos(angle) * 5 * 2; 
                 star.y += Math.sin(angle) * 5 * 2;
+            }else{
+              const angle = Math.atan2(star.y - mouseY, star.x - mouseX); 
+                star.x -=  Math.cos(angle) * 5 * 2; 
+                star.y -= Math.sin(angle) * 5 * 2;
+                star.size +=0.01
+                star.speed +=0.01
             }
+          }
         });
     })
     window.addEventListener('mouseup', (event) =>{
@@ -100,11 +111,13 @@ const Background = () => {
             }
         });
     })
-    var spin = 0;
-    let isThrottled = false; 
+    
+
     let isKeyPressed = false; 
+
+
     window.addEventListener("keydown", (event) => {
-  if (event.key === 'o' && !isThrottled) {
+  if (event.key === 'h' && !isThrottled) {
     isThrottled = true;
     isKeyPressed = true;
     const maxDistance = 300;
@@ -141,24 +154,24 @@ const Background = () => {
 
       star.x = (visualViewport.width * 0.5) + Math.cos(angle + spin) * radius;
       star.y = (visualViewport.height * 0.5) + Math.sin(angle + spin) * radius; 
-      star.size = Math.max(1, 5 - (radius / maxDistance) * 4);
+      star.size = Math.max(1, 7 - (radius / maxDistance) * 4);
       star.speed = 0;
       spin += 1 / distance;
     });
 
 
-    
-
-   
     setTimeout(() => {
       isThrottled = false;
-    }, 20); 
+    }, 3); 
+  }else if (event.key == 't' && !event.repeat) {
+    toggle = !toggle;
+    localStorage.setItem('force', JSON.stringify(toggle)); 
   }
 });
 
     
      window.addEventListener("keyup", (event) => {if(event.repeat){}
-     if(event.key === 'o'){
+     if(event.key == 'h'){
       isKeyPressed = false;
      stars.forEach(star => {  
        const angle = Math.atan2(star.y - (visualViewport.height * 0.5), star.x - (visualViewport.width * 0.5));
@@ -170,7 +183,7 @@ const Background = () => {
           star.x += Math.cos(angle) * (finalXDist); 
           star.y += Math.sin(angle) * (finalYDist) ;
           star.speed = Math.random() + 1
-        },0.2)
+        },30)
       
      
   });
