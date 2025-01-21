@@ -6,7 +6,7 @@ const Background = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
-    var starCount = 500;
+    var starCount = 300;
 
     let toggle = JSON.parse(localStorage.getItem('force')) || false; 
 
@@ -29,7 +29,6 @@ const Background = () => {
         this.startingRed =Math.random() * 255
         this.startingGreen =Math.random() * 255
         this.startingBlue =Math.random() * 255
-        
       }
 
       draw() {
@@ -183,7 +182,7 @@ const Background = () => {
           star.x += Math.cos(angle) * (finalXDist); 
           star.y += Math.sin(angle) * (finalYDist) ;
           star.speed = Math.random() + 1
-        },30)
+        },3)
       
      
   });
