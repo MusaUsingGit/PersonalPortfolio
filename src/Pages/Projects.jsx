@@ -16,7 +16,9 @@ const Projects = () => {
           <h1 className="text-7xl font-extrabold max-w-[800px] mx-auto text-center gradient-text select-none">
             My Works
           </h1>
-          <div id='CODINGPROJECTCONTAINER'></div>
+          <div id='CODINGPROJECTCONTAINER'>
+            
+          </div>
         </div>
 
         <div className="snap-center h-full w-full flex items-center justify-normal gradient-text">
@@ -25,7 +27,7 @@ const Projects = () => {
             </h1>
             <div id='PHOTOSHOPPROJECTCONTAINER'></div>
           </div>
-          {/*<Footer /> */}
+          <Footer />
          
       </div>
       

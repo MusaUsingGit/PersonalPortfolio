@@ -154,7 +154,7 @@ const About = () => {
             <img src={art} alt="artwork" className="rounded-2xl" />
           </Link>
         </div>
-        {/*<Footer /> */}
+        <Footer />
       </div>
     </div>
   );
