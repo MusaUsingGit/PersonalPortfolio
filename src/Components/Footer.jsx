@@ -8,7 +8,7 @@ const Footer = () => {
       <footer className="w-full flex justify-center mb-[10%]">
         <div className="md:w-[20%]">
              
-        <div className="flex justify-around mb-[10%] text-7xl gradient-text p-5 w-full"> 
+        <div className="flex justify-around mb-[10%] text-7xl gradient-text dark:gradient-text-dark p-5 w-full"> 
           <div>
             <a href="https://github.com/MusaUsingGit"><FaGithub className="text-white m-2" /></a>
           </div>

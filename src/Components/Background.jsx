@@ -6,6 +6,8 @@ const Background = () => {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
+    ctx.fillStyle = "blue";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
     var starCount = 300;
 
     let toggle = JSON.parse(localStorage.getItem('force')) || false; 
@@ -196,8 +198,7 @@ const Background = () => {
       window.removeEventListener('resize', () => {});
     };
   }, []);
-
-  return <canvas className="animate-image-hue-shift"ref={canvasRef}></canvas>;
+  return <canvas className="bg-slate-200 dark:bg-[#020114]" ref={canvasRef}></canvas>;
 };
 
 export default Background;

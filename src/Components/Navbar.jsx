@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { GiNoodles } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import DarkModeToggle from "./DarkModeToggle";
+
 const values = [
   { title: "Home", link: "/" },
   { title: "About", link: "/about" },
   { title: "Projects", link: "/projects" },
   { title: "Contact", link: "/contact" }
 ];
+
+
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -17,17 +21,19 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-white z-2 select-none">
-      <Link to={"/SecretPage"}><GiNoodles className="text-5xl font-bold text-[#fee379] hover:animate-text-color-change"/></Link>
+    <div className="flex justify-between items-center h-24 max-w-[1240px] mx-auto px-4 text-black dark:text-white z-2 select-none">
+      <Link to={"/SecretPage"}><GiNoodles className="text-5xl font-bold text-[#fabd16] dark:text-[#fee379]  hover:animate-text-color-change"/></Link>
       <h1 className="w-full text-4xl font-bold gradient-text">SOUP!</h1>
       <ul className="hidden md:flex">
         {values.map((value, index) => {
           return <Link to={value.link} className="p-5" viewTransition>{value.title}</Link>;
         })}
+        
       </ul>
       <div onClick={handleNav} className="block md:hidden">
         {nav ? <AiOutlineClose size={40} /> : <AiOutlineMenu size={40} />}
       </div>
+      <DarkModeToggle />
       <ul
   className={`fixed top-0 left-0 w-[70%] h-full border-r border-gray-900 bg-[#000300] ease-in-out duration-500 z-20 ${
     nav
