@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { PiSunLight } from "react-icons/pi";
 import { PiMoonLight } from "react-icons/pi";
 function DarkModeToggle() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(true);
 
   useEffect(() => {
     if (dark) {

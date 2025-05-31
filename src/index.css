@@ -30,6 +30,8 @@ canvas{
     --tw-gradient-to: #7166EE var(--tw-gradient-to-position);
    color: transparent;
    background-clip: text;
+   -webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
  .gradient-text{
   background-image: linear-gradient(to top, var(--tw-gradient-from), var(--tw-gradient-to));
@@ -37,6 +39,8 @@ canvas{
 --tw-gradient-to: #EEE617;
 color: transparent;
 background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
 
 @layer utilities {
