@@ -14,7 +14,7 @@ function DarkModeToggle() {
 
   return (
     <button onClick={() => setDark(!dark)}>
-      {dark ? <PiMoonLight className='text-xl' /> : <PiSunLight className='text-xl'/>}
+      {dark ?   <PiSunLight className='text-xl'/> : <PiMoonLight className='text-xl' />}
     </button>
   );
 }
