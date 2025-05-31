@@ -67,7 +67,7 @@ const About = () => {
           data-aos-easing="linear"
           className="snap-center w-full h-full items-center justify-center gradient-text flex flex-col select-none"
         >
-          <h1 className="text-6xl font-extrabold max-w-[800px] mx-auto text-center ">
+          <h1 className="text-6xl font-extrabold max-w-[800px] mx-auto text-center gradient-text">
             I Write Code
           </h1>
 
@@ -143,7 +143,7 @@ const About = () => {
           data-aos-easing="linear"
           className="w-full h-full items-center justify-start gradient-text flex flex-col select-none"
         >
-          <h1 className="text-6xl font-extrabold max-w-[800px] mx-auto text-center ">
+          <h1 className="text-6xl font-extrabold max-w-[800px] mx-auto text-center gradient-text ">
             I Edit Images
           </h1>
 
